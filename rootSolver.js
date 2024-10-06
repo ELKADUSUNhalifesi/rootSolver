@@ -1,22 +1,26 @@
-function karekök (sayı)
+function kök (sayı, derece, doNotPass)
 {
-    var N = prompt("First Define In Which Degree You Want To Take Roots Of Numbers! : ");
+    if (!doNotPass)
+    {
+        derece = prompt("First Define In Which Degree You Want To Take Roots Of Numbers! : ");
 
-    sayı = prompt("Enter A Number You Wished To Be Rooted In Order Of " + N + " : ")
-
+        sayı = prompt("Enter A Number You Wished To Be Rooted In Order Of " + derece + " : ")
+    }
+    
     var kökü, kuvveti;
     var altLimit = 0, üstLimit = sayı;
 
     kökü = (altLimit + üstLimit) / 2;
     var tekrar = 0;
 
-    var sonDeğer, hassasiyet = 0.000001
+    var sonDeğer, hassasiyet = 0.00000000000000001
+
     do
     {
         sonDeğer = kökü;
         tekrar++;
 
-        kuvveti = kökü**N;
+        kuvveti = kökü**derece;
 
         if (kuvveti > sayı)
             üstLimit = kökü;
@@ -32,4 +36,5 @@ function karekök (sayı)
     return kökü;
 }
 
-console.log(karekök(9));
+// console.log(kök(9,2,true)); // for direct usage from console as command İnşALLAH
+console.log(kök());
